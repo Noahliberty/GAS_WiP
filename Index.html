@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  
+  <script>
+      function handleFormSubmit(formObject) {
+        google.script.run.withSuccessHandler(updateUrl).processForm(formObject);
+      }
+      function updateUrl(url) {
+        var div = document.getElementById('output');
+             }
+    </script>
+  </head>
+  <body>
+    <form id="myForm" onsubmit="handleFormSubmit(this)">
+      <input name="date" type="date" />
+      <input type="submit" value="Submit" />
+    </form>
+    <div id="output"></div>
+ </body>
+</html>
