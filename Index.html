@@ -6,10 +6,7 @@
   <script>
       function handleFormSubmit(formObject) {
         google.script.run.withSuccessHandler(updateUrl).processForm(formObject);
-      }
-      function updateUrl(url) {
-        var div = document.getElementById('output');
-             }
+      }     
     </script>
   </head>
   <body>
@@ -17,6 +14,5 @@
       <input name="date" type="date" />
       <input type="submit" value="Submit" />
     </form>
-    <div id="output"></div>
  </body>
 </html>
