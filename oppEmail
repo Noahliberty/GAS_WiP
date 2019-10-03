@@ -1,9 +1,227 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    <p> <?= qaInfoOpp.agentldap ?> </p>
-  </body>
+<head>
+<base target="_top">
+<style type="text/css">
+table {
+width: 95%;
+border: 1px solid black;
+border-collapse: collapse;
+text-align: center
+
+}
+th, td {
+border: 1px solid black;
+border-collapse: collapse;
+width: 45%;
+}
+
+.titles {
+background-color: #979ec7;
+}
+
+.scores {
+background-color: #9ea7d9;
+}
+
+
+</style>
+</head>
+<body>
+<p>Hi,</p>
+<p>A QA has been conducted for you. Please review the details and results below:</p>
+
+<table>
+<thead>
+<tr class="titles">
+<th colspan="2">QA Evaluation</th>
+</tr>
+</thead>
+
+<tbody>      
+<tr>
+<td>Evaluator Email</td>
+<td><?= qaInfo.evaluatoremail ?></td>
+</tr>
+<tr>
+<td>Source</td>
+<td><?= qaInfo.source ?></td>
+</tr>
+<tr>
+<td>Product</td>
+<td><?= qaInfo.product ?></td>
+</tr>
+<tr>
+<td>Language of Call</td>
+<td><?= qaInfo.language ?></td>
+</tr>
+<tr>
+<td>Agent LDAP</td>
+<td><?= qaInfo.agentldap ?></td>
+</tr>
+<tr>
+<td>SFDC Link</td>
+<td><a href="<?= qaInfo.salesforcelink ?>">Click here</a></td> 
+</tr>
+<tr>
+<td>Session ID</td>
+<td href="<?= qaInfo.sessionid ?>"><?= qaInfo.sessionid ?></td>
+</tr>
+<tr>
+<td>Type of Call Evaluation</td>
+<td><?= qaInfo.typeofcalleval ?>  </td>
+</tr>            
+<tr class="scores">
+<th>Overall Score</th>
+<th><?= Math.round(qaInfo.scores.overall * 1000) / 10 ?>% </th>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<br>     
+
+<table>
+<tbody>   
+<tr class="titles">
+<th colspan="2">Prospect Experience</th>
+</tr>
+<tr>
+<td>Introduction adapted to scrubbing</td>
+<td><?= qaInfo.px.introscrubing ?></td>
+</tr>
+<tr>
+<td>Active listening and Relevant question type</td>
+<td><?= qaInfo.px.activelistening ?></td>
+</tr>
+<tr>
+<td>Product Knowledge</td>
+<td><?= qaInfo.px.productknowledge ?></td>
+</tr>
+<tr>
+<td>Soft skills</td>
+<td><?= qaInfo.px.softskills ?></td>
+</tr>
+<tr>
+<td>Recapping and building value for Next Steps</td>
+<td><?= qaInfo.px.recappingandbuildvalue ?></td>
+</tr>
+<tr class="scores">
+<th>Overall Prospect Experience Achieved Score</th>
+<th><?= Math.round(qaInfo.scores.overallpx * 1000) / 10 ?>% </th>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table>
+<tbody>
+<tr class="titles">
+<th colspan="2">Qualification</th>
+</tr>
+<tr>
+<td>Discovery</td>
+<td><?= qaInfo.qualification.discovery ?></td>
+</tr>
+<tr>
+<td>Budget</td>
+<td><?= qaInfo.qualification.budget ?></td>
+</tr>
+<tr>
+<td>Authority</td>
+<td><?= qaInfo.qualification.authority ?></td>
+</tr>
+<tr>
+<td>Need</td>
+<td><?= qaInfo.qualification.need ?></td>
+</tr>
+<tr>
+<td>Timeline</td>
+<td><?= qaInfo.qualification.timeline ?></td>
+</tr>
+<tr>
+<td>Effectiveness of Cross Sell</td>
+<td><?= qaInfo.qualification.crosssell ?></td>
+</tr>
+<tr class="scores">
+<th>Overall Qualification Achieved Score</th>
+<th><?= Math.round(qaInfo.scores.overallqualification * 1000) / 10 ?>% </th>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table>
+<tbody>
+<tr class="titles">
+<th colspan="2">Admin Work - Scrubbing and Data Hygiene</th>
+</tr>
+<tr>
+<td>Scrubbing</td>
+<td><?= qaInfo.adminwork.scrubbing ?></td>
+</tr>
+<tr>
+<td>Data Hygiene</td>
+<td><?= qaInfo.adminwork.datahygiene ?></td>
+</tr>
+<tr class="scores">
+<th>Overall Scrubbing and Data Hygiene Achieved Score</th>
+<th><?= Math.round(qaInfo.scores.overallscrubbingdata * 1000) / 10 ?>% </th>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table>
+<tbody>
+<tr class="titles">
+<th colspan="2">Compliance</th>
+<tr>
+<td>Disclaimer</td>
+<td><?= qaInfo.adminwork.disclaimer ?></td>
+</tr>
+<tr>
+<td>Disclosure of Internal Information</td>
+<td><?= qaInfo.adminwork.disclosureinfo ?></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table>
+<tbody>
+<tr class="titles">
+<th>Comments:</th>        
+</tr>
+<tr>
+<td><?= qaInfo.comments ?></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<br>
+
+<table>
+<tbody>
+<tr class="titles">
+<th>Questions and disputes</th>
+<tr>
+<td>If you need more clarification on your score or have questions please fill out a <a href="">Dispute form</a>. We will review your comments and arrange a follow up meeting to discuss this further.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</body>
 </html>
+
+
